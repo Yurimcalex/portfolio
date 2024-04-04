@@ -5,18 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D Portfolio Website HTML CSS and Javascript | Codehal</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/media-queries.css">
   <!-- box icons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
   <body>
     <div class="wrapper">
       <div class="cover cover-left"></div>
-      <div class="cover cover-right"></div>
+      <div class="cover cover-right turn"></div>
 
       <div class="book">
         <!-- Profile page -->
-        <div class="book-page page-left">
+        <div class="book-page page-left pg">
           <div class="profile-page">
             <img src="images/photo.jpg" alt="">
             <h1>Gordon Felix</h1>
@@ -41,7 +42,7 @@
         <!-- page 1 & 2 -->
         <div class="book-page page-right turn" id="turn-1">
           <!-- page 1 - work experience -->
-          <div class="page-front">
+          <div class="page-front pg">
             <h1 class="title">Work Experience</h1>
 
             <div class="workeduc-box">
@@ -78,7 +79,7 @@
           </div>
 
           <!-- page 2 - education -->
-          <div class="page-back">
+          <div class="page-back pg">
             <h1 class="title">Education</h1>
 
             <div class="workeduc-box">
@@ -118,7 +119,7 @@
         <!-- page 3 & 4 -->
         <div class="book-page page-right turn" id="turn-2">
           <!-- page 3 (my services) -->
-          <div class="page-front">
+          <div class="page-front pg">
             <h1 class="title">My Services</h1>
 
             <div class="services-box">
@@ -160,7 +161,7 @@
           </div>
 
           <!-- page 4 (my skills) -->
-          <div class="page-back">
+          <div class="page-back pg">
             <h1 class="title">My Skills</h1>
 
             <div class="skills-box">
@@ -207,7 +208,7 @@
         <!-- page 5 & 6 -->
         <div class="book-page page-right turn" id="turn-3">
           <!-- page 5 - latest project or my portfolio -->
-          <div class="page-front">
+          <div class="page-front pg">
             <h1 class="title">Latest Project</h1>
 
             <div class="portfolio-box">
@@ -239,7 +240,7 @@
           </div>
 
           <!-- page 6 - contact me -->
-          <div class="page-back">
+          <div class="page-back pg">
             <h1 class="title">Contact Me!</h1>
 
             <div class="contact-box">
@@ -265,8 +266,18 @@
           </div>
         </div>
       </div>
+
+
+      <span class="nextprev-btn back mediaq">
+        <i class="bx bx-chevron-left"></i>
+      </span>
+      <span class="nextprev-btn mediaq">
+        <i class="bx bx-chevron-right"></i>
+      </span>
     </div>
 
+    <script src="js/turnPageBig.js"></script>
+    <script src="js/turnPageSmall.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
