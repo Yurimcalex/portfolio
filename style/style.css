@@ -496,3 +496,23 @@ body {
 .mediaq {
   display: none;
 }
+
+.settings {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 10%;
+  left: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+}
+
+.settings.disable {
+  border: 1px solid lightgray;
+  color: lightgray;
+}

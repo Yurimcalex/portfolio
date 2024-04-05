@@ -96,6 +96,10 @@
 	.number-page {
 		display: none;
 	}
+
+	.settings {
+		display: none;
+	}
 }
 
 @media screen and (min-width: 361px) and (max-width: 800px) {
