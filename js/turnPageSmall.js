@@ -29,6 +29,6 @@ function smallerScreenTurnPage() {
 function resetSmallZIndexes() {
 	const pages = document.querySelectorAll('.pg');
 	for (let page of pages) {
-		page.style.zIndex = 0;
+		page.style.zIndex = '';
 	}
 }
