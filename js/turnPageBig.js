@@ -1,30 +1,68 @@
+let animationState = {
+	enable: true
+};
+
+function toggleAnimation() {
+	const pages = document.querySelectorAll('.book-page.page-right');
+	animationState.enable = !animationState.enable;
+
+	if (animationState.enable) {
+		pages.forEach((page, index) => {
+			page.style.transition = '';
+		});
+	} else {
+		pages.forEach((page, index) => {
+			page.style.transition = 'unset';
+		});
+	}
+}
+
+document.querySelector('.toggle-animation').onclick = function () {
+	toggleAnimation();
+	this.classList.toggle('disable');
+};
+
 function biggerScreenTurnPage() {
 	//turn pages when click next or prev button
 	const pageTurnBtn = document.querySelectorAll('.nextprev-btn');
+	const pages = document.querySelectorAll('.book-page.page-right');
+	const contactMeBtn = document.querySelector('.btn.contact-me');
+	const backProfileBtn = document.querySelector('.back-profile');
+	const flag = animationState.enable;
 
 	pageTurnBtn.forEach((el, index) => {
-		el.onclick = () => {
+		el.onclick = () => {			
 			const pageTurnId = el.getAttribute('data-page');
 			const pageTurn = document.getElementById(pageTurnId);
 
 			if (pageTurn.classList.contains('turn')) {
 				pageTurn.classList.remove('turn');
-				setTimeout(() => {
+
+				if (flag) {
 					pageTurn.style.zIndex = 20 - index;
-				});
+				} else {
+					setTimeout(() => {
+						pageTurn.style.zIndex = 20 - index;
+					});	
+				}
+				
 			} else {
 				pageTurn.classList.add('turn');
-				setTimeout(() => {
+				if (flag) {
 					pageTurn.style.zIndex = 20 + index;
-				});
+				} else {
+					setTimeout(() => {
+						pageTurn.style.zIndex = 20 + index;
+					});
+				}
 			}
 		};
 	});
 
-	//contact me button when click
-	const pages = document.querySelectorAll('.book-page.page-right');
-	const contactMeBtn = document.querySelector('.btn.contact-me');
 
+
+
+	//contact me button when click
 	contactMeBtn.onclick = () => {
 		pages.forEach((page, index) => {
 			setTimeout(() => {
@@ -46,7 +84,6 @@ function biggerScreenTurnPage() {
 		}
 	}
 
-	const backProfileBtn = document.querySelector('.back-profile');
 
 	backProfileBtn.onclick = () => {
 		pages.forEach((_, index) => {
